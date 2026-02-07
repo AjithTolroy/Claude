@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "iOS: Build (Debug)",
+      "type": "shell",
+      "command": "xcodebuild -scheme GymRoutineApp -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Debug build",
+      "problemMatcher": []
+    },
+    {
+      "label": "iOS: Test",
+      "type": "shell",
+      "command": "xcodebuild -scheme GymRoutineApp -destination 'platform=iOS Simulator,name=iPhone 15' test",
+      "problemMatcher": []
+    },
+    {
+      "label": "iOS: Launch Simulator App",
+      "type": "shell",
+      "command": "xcrun simctl boot 'iPhone 15' || true && open -a Simulator",
+      "problemMatcher": []
+    },
+    {
+      "label": "Environment: Validate iOS toolchain",
+      "type": "shell",
+      "command": "bash scripts/validate_ios_env.sh",
+      "problemMatcher": []
+    }
+  ]
+}
